@@ -1,0 +1,57 @@
+css selector:
+
+	element,element	
+	#id				: id						:#id#id			ex:	multiple ids
+	h1				: tag
+	.clas				: class						:class.class 		ex:	multiple class
+	div.into			: tag.class
+	bold.it				: class.class
+	li[name = "ashu"]		: in list tag select where name = ashu   
+	a[href^='https']		: a tag having href startiing with https	:start
+	a[href$='fr']			: a tag having href ending with fr		:end
+	a[href~or *= 'google']		: a tag having value google in text		:between
+	div.intro p			: div tag with class intro having tag <p>
+	div.intro p,#location		: with id location
+	div.intro > p			: select all <p> inside div tag with class intro
+	div.intro + p			: select p tag just next to div tag with class intro
+	li:nth-child(1),li:nth-child(3)	:	in list tag select frst and third child of list tag 		
+	div ~ p				: all p tag after d
+	
+diffrence b/w id and class is :	we can give more than one tag in class.
+
+
+
+Xpath Selector:
+Selecting Downward:
+	//h1						: look for all h1 tag
+	//div[@class = 'intro']/p			: in div tag look for class itro and select all p tags
+	//div[@class = 'intro' or @class= 'outo']/p	: look for class intro and aouto p tags 
+	//a/@href
+	//a[start-with(@href,'https')]			: take 2 agument where we need to search and second is what need to be searched
+	//a[end-with(@href,'fr')]			: we cannot use this as this function is not used this
+	//a[contains(@href,'google')]			: select google in bweeten
+	//a[conatins(text(),'France')]			: select text in a tag
+	//ul[@id='item']/li[position()= 1 or last()]
+	//ul[@id='item']/li[position() >  1
+	//p[@id='unique']/parent::div			: parent is also called as axix . it means show the data inside the parent div tag 
+	//p[@id='unique']/parent::node()		: node() automatically parent node 
+	//p[@id='unique']/ancestor-or-self::node()	: ancestor return parent as well as parent of parent 
+	//p[@id='unique']/preceding::h1			: preceding axis will return all the h1 element preceding p tag  
+	//p[@id='outside']/preceding-sibling::node()	: all p tag preceding this p tag 
+selecting Upword:
+	//div[@class = 'intro']/child::p		: show all the p tag (i.e child) inside class intro 
+	//div[@class = 'intro']/child::node()		: all the child node inside class intri 
+	//div[@class = 'intro']/following::p		: list all the elements till the end of the page ager class intro 
+	//div[@class = 'intro']/following-sibling::p	: list sibling under same parent tag
+	//div[@class = 'intro']/descedant::p		: giv subtags inside the parent node
+
+	
+	parent	 		^
+	ancestor 		|
+	precedings 		|
+	precding-sibling	|
+
+
+
+so wheneve we use xpath against selector object we show it like (".//text()")
+		
